@@ -108,6 +108,7 @@ func runGrpcServer() *grpc.Server {
 	}
 	s := grpc.NewServer(opts...)
 	pb.RegisterTagServiceServer(s, server.NewTagServer())
+	// grpcurl need
 	reflection.Register(s)
 
 	return s

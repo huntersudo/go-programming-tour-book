@@ -45,8 +45,6 @@ func NewRouter() *gin.Engine {
 	// register trans middleware
 	r.Use(middleware.Translations())
 
-
-
 	article := v1.NewArticle()
 	tag := v1.NewTag()
 	upload := api.NewUpload()
@@ -60,7 +58,7 @@ func NewRouter() *gin.Engine {
 
 	apiv1 := r.Group("/api/v1")
 	apiv1.Use() //middleware.JWT()
-	//apiv1.Use(middleware.JWT()) 只针对 apiv1 的路由分 组进行 JWT 中间件的引用，也就是只有 apiv1 路由分组里的路由方法会受此中间件的约束
+	// apiv1.Use(middleware.JWT()) 只针对 apiv1 的路由分 组进行 JWT 中间件的引用，也就是只有 apiv1 路由分组里的路由方法会受此中间件的约束
 	{
 		// 创建标签
 		apiv1.POST("/tags", tag.Create)

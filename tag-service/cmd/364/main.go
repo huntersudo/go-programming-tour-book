@@ -37,6 +37,8 @@ func init() {
 
 const SERVICE_NAME = "tag-service"
 
+// 同端口同方法提供双流量支持
+// grpc-gateway 能够将 RESTful 转换为 gRPC 请求，实现同一个 RPC 方法提供 gRPC 协议和 HTTP/1.1 的双流量支持的需求。
 func main() {
 	err := RunServer(port)
 	if err != nil {

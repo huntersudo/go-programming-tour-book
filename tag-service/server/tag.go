@@ -28,6 +28,7 @@ func (t *TagServer) GetTagList(ctx context.Context, r *pb.GetTagListRequest) (*p
 	api := bapi.NewAPI("http://127.0.0.1:8000")
 	body, err := api.GetTagList(ctx, r.GetName())
 	if err != nil {
+		// todo errorCode ->> rpcError
 		return nil, errcode.TogRPCError(errcode.ErrorGetTagListFail)
 	}
 

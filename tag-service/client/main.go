@@ -34,6 +34,7 @@ func main() {
 	}
 	defer clientConn.Close()
 	tagServiceClient := pb.NewTagServiceClient(clientConn)
+	//  发起指定 RPC 方法的调用。
 	resp, err := tagServiceClient.GetTagList(newCtx, &pb.GetTagListRequest{Name: "Go"})
 	if err != nil {
 		log.Fatalf("tagServiceClient.GetTagList err: %v", err)

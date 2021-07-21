@@ -11,7 +11,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
-
+// 另起端口监听http
 var grpcPort string
 var httpPort string
 
