@@ -13,6 +13,7 @@ import (
 	opentracing "github.com/opentracing/opentracing-go"
 )
 
+// Tracing gin and tracer
 func Tracing() func(c *gin.Context) {
 	return func(c *gin.Context) {
 		var newCtx context.Context

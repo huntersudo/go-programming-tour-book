@@ -11,6 +11,7 @@ import (
 func NewJaegerTracer(serviceName, agentHostPort string) (opentracing.Tracer, io.Closer, error) {
 	cfg := &config.Configuration{
 		ServiceName: serviceName,
+		// 固定采样 对所有数据都采样
 		Sampler: &config.SamplerConfig{
 			Type:  "const",
 			Param: 1,

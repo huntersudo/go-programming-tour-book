@@ -23,7 +23,7 @@ func (w AccessLogWriter) Write(p []byte) (int, error) {
 
 func AccessLog() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		// 我们初始化了 AccessLogWriter，将其赋予给当前的 Writer 写入流 （可理解为替换原有），
+		// todo 我们初始化了 AccessLogWriter，将其赋予给当前的 Writer 写入流 （可理解为替换原有），
 		bodyWriter := &AccessLogWriter{body: bytes.NewBufferString(""), ResponseWriter: c.Writer}
 		c.Writer = bodyWriter
 
