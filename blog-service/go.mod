@@ -17,6 +17,7 @@ require (
 	github.com/golang/protobuf v1.4.0 // indirect
 	github.com/jinzhu/gorm v1.9.12
 	github.com/juju/ratelimit v1.0.1
+	github.com/go-sql-driver/mysql v1.5.0
 	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/mailru/easyjson v0.7.1 // indirect
 	github.com/opentracing/opentracing-go v1.1.0
